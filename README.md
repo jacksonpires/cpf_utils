@@ -1,4 +1,5 @@
 # CpfUtils
+[![Build status](https://secure.travis-ci.org/jacksonpires/cpf_utils.png)](https://secure.travis-ci.org/jacksonpires/cpf_utils)
 
 CpfUtils é uma suite de funcionalidades para CPF.
 O CpfUtils é capaz de gerar CPF para testes no formado tradicional ou apenas numérico, testa se determinado número de CPF é válido, gera dígitos verificadores para determinado número candidato a CPF, dentre outras coisas.
