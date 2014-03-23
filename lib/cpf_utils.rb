@@ -20,6 +20,14 @@ module CpfUtils
     Cpf.new(sample_numbers).generate_cpf.to_cpf_format
   end
 
+  # Gera um número de CPF formatado.
+  #
+  # Exemplo:
+  # CpfUtils.cpf_formatado => # "456.983.948-23"
+  def self.cpf_formatado
+    self.cpf_formatted
+  end
+
   # Verifica se um CPF é válido.
   #
   # Exemplo:
@@ -28,6 +36,16 @@ module CpfUtils
   # CpfUtils.valid_cpf?("456.983.948-23") => # true
   def self.valid_cpf?(cpf_number)
     cpf_number.to_s.valid_cpf?
+  end
+
+  # Verifica se um CPF é válido.
+  #
+  # Exemplo:
+  # CpfUtils.cpf_valido?(45698394823) => # true
+  # CpfUtils.cpf_valido?("45698394823") => # true
+  # CpfUtils.cpf_valido?("456.983.948-23") => # true
+  def self.cpf_valido?
+    self.valid_cpf?(cpf_number)
   end
 
   private

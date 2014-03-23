@@ -56,4 +56,19 @@ class String
   def generate_cpf_formatted
     generate_cpf.to_cpf_format
   end
+
+  # Apelido 'mascara_de_cpf_valida' para o método valid_cpf_mask
+  alias_method :mascara_de_cpf_valida?, :valid_cpf_mask?
+
+  # Apelido 'cpf_valido?' para o método valid_cpf?
+  alias_method :cpf_valido?, :valid_cpf?
+
+  # Apelido 'para_formato_cpf' para o método to_cpf_format
+  alias_method :para_formato_cpf, :to_cpf_format
+
+  # Apelido 'gerar_cpf' para o método generate_cpf
+  alias_method :gerar_cpf, :generate_cpf
+
+  # Apelido 'gerar_cpf_formatado' para o método generate_cpf_formatted
+  alias_method :gerar_cpf_formatado, :generate_cpf_formatted
 end
