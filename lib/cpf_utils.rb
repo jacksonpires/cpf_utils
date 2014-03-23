@@ -44,7 +44,7 @@ module CpfUtils
   # CpfUtils.cpf_valido?(45698394823) => # true
   # CpfUtils.cpf_valido?("45698394823") => # true
   # CpfUtils.cpf_valido?("456.983.948-23") => # true
-  def self.cpf_valido?
+  def self.cpf_valido?(cpf_number)
     self.valid_cpf?(cpf_number)
   end
 

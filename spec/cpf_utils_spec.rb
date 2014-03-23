@@ -15,9 +15,19 @@ describe CpfUtils do
       expect(valid_cpf).to match(/^[+-]?[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}+$/)
     end
 
+    it ".cpf_formatado" do
+      valid_cpf = CpfUtils.cpf_formatado
+      expect(valid_cpf).to match(/^[+-]?[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}+$/)
+    end
+
     it ".valid_cpf?" do
       valid_cpf = CpfUtils.cpf
       expect(CpfUtils.valid_cpf? valid_cpf).to be_true
+    end
+
+    it ".cpf_valido?" do
+      cpf_valido = CpfUtils.cpf
+      expect(CpfUtils.cpf_valido? cpf_valido).to be_true
     end
 
     it ".valid_cpf? - be false" do
