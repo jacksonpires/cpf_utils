@@ -1,4 +1,4 @@
-require "cpf_utils"
+require "spec_helper"
 
 describe CpfUtils do
 
