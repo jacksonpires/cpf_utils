@@ -1,9 +1,7 @@
 require "spec_helper"
 
 describe CpfUtils do
-
   context 'CpfUtils::Cpf' do
-
     it "#initialize - Text" do
       cpf = CpfUtils::Cpf.new("123456789")
       expect(cpf.numbers).to be_a_kind_of(Array)

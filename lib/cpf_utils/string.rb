@@ -5,16 +5,15 @@ class String
   # "456.983.948-23".valid_cpf_mask? => # true
   # "456.983..948-23".valid_cpf_mask? => # false
   def valid_cpf_mask?
-    without_mask = !!(self =~ /^[+-]?[0-9]{11}+$/)
-    with_mask = !!(self =~ /^[+-]?[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}+$/)
+    without_mask = !!(self =~ /^[0-9]{11}+$/)
+    with_mask = !!(self =~ /^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}+$/)
     with_mask || without_mask
   end
 
   # Verifica se um CPF é válido:
   #
-  # CpfUtils.valid_cpf?("47238051923") => # true
-  # CpfUtils.valid_cpf?(47238051923) => # tru
-  # CpfUtils.valid_cpf?("472.380.519-23") => # true
+  # "47238051923".valid_cpf? => # true
+  # "472.380.519-23".valid_cpf? => # true
   def valid_cpf?
     if valid_cpf_mask?
       original_cpf = self.gsub(/\.?-?/,"",)
@@ -40,7 +39,7 @@ class String
   #
   # "456983948".generate_cpf => # "45698394823"
   def generate_cpf
-    if !!(self =~ /^[+-]?[0-9]{9}+$/)
+    if !!(self =~ /^[0-9]{9}+$/)
       final_cpf = self
 
       final_cpf << CpfUtils::Cpf.new(final_cpf[0..8]).first_digit.to_s
@@ -50,7 +49,7 @@ class String
     end
   end
 
-  # Para gerar um número de CPF formatado a partir de um número candidato:
+  # Gera um número de CPF formatado a partir de um número candidato:
   #
   # "456983948".generate_cpf_formatted => # "456.983.948-23"
   def generate_cpf_formatted

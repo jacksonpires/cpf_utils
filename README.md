@@ -46,10 +46,10 @@ O CpfUtils é muito fácil de usar, por exempo:
     # Para formatar um número válido de CPF:
     "45698394823".to_cpf_format => # "456.983.948-23"
 
-    # Para gerar um número de CPF a partir de um número candidato:
+    # Para gerar um número de CPF a partir de um número candidato  de 9 dígitos:
     "456983948".generate_cpf => # "45698394823"
 
-    # Para gerar um número de CPF formatado a partir de um número candidato:
+    # Para gerar um número de CPF formatado a partir de um número candidato de 9 dígitos:
     "456983948".generate_cpf_formatted => # "456.983.948-23"
 
 Também é possível usar métodos em português:
@@ -85,7 +85,7 @@ Também é possível usar métodos em português:
 ## Contribuindo
 
 1. Faça um Fork
-2. Crie um branch para a nova funcionalidade (`git checkout -b my-new-feature`)
-3. Faça o commit de suas alterações  (`git commit -am 'Add some feature'`)
-4. Faça um push da sua nova funconalidade (`git push origin my-new-feature`)
+2. Crie um branch para a nova funcionalidade (`git checkout -b minha-nova-funcionalidade`)
+3. Faça o commit de suas alterações  (`git commit -am 'Adicionada nova funcionalidade'`)
+4. Faça um push da sua nova funconalidade (`git push origin minha-nova-funcionalidade`)
 5. Submeta uma nova Pull Request

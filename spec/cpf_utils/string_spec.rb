@@ -35,12 +35,12 @@ describe String do
 
   it "#to_cpf_format?" do
     cpf = CpfUtils.cpf
-    expect(cpf.to_cpf_format).to match(/^[+-]?[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}+$/)
+    expect(cpf.to_cpf_format).to match(/^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}+$/)
   end
 
   it "#para_formato_cpf?" do
     cpf = CpfUtils.cpf
-    expect(cpf.para_formato_cpf).to match(/^[+-]?[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}+$/)
+    expect(cpf.para_formato_cpf).to match(/^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}+$/)
   end
 
   it "#generate_cpf" do
@@ -63,13 +63,13 @@ describe String do
     valid_cpf = CpfUtils.cpf
     final_cpf = valid_cpf[0..8].gerar_cpf_formatado
 
-    expect(final_cpf).to match(/^[+-]?[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}+$/)
+    expect(final_cpf).to match(/^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}+$/)
   end
 
   it "#generate_cpf_formatted" do
     valid_cpf = CpfUtils.cpf
     final_cpf = valid_cpf[0..8].generate_cpf_formatted
 
-    expect(final_cpf).to match(/^[+-]?[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}+$/)
+    expect(final_cpf).to match(/^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}+$/)
   end
 end

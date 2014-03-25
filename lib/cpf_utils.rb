@@ -50,7 +50,7 @@ module CpfUtils
 
   private
 
-  # Sorteia nove números para compor o um novo CPF
+  # Sorteia nove números para compor um novo CPF
   def self.sample_numbers
     [*0..9].sample(9)
   end

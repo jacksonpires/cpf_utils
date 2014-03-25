@@ -10,12 +10,12 @@ describe CpfUtils do
 
   it ".cpf_formatted" do
     valid_cpf = CpfUtils.cpf_formatted
-    expect(valid_cpf).to match(/^[+-]?[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}+$/)
+    expect(valid_cpf).to match(/^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}+$/)
   end
 
   it ".cpf_formatado" do
     valid_cpf = CpfUtils.cpf_formatado
-    expect(valid_cpf).to match(/^[+-]?[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}+$/)
+    expect(valid_cpf).to match(/^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}+$/)
   end
 
   it ".valid_cpf?" do
