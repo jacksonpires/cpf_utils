@@ -76,10 +76,10 @@ Também é possível usar métodos em português:
     # Para formatar um número válido de CPF:
     "45698394823".para_formato_cpf => # "456.983.948-23"
 
-    # Para gerar um número de CPF a partir de um número candidato:
+    # Para gerar um número de CPF a partir de um número candidato de 9 dígitos:
     "456983948".gerar_cpf => # "45698394823"
 
-    # Para gerar um número de CPF formatado a partir de um número candidato:
+    # Para gerar um número de CPF formatado a partir de um número candidato de 9 dígitos:
     "456983948".gerar_cpf_formatado => # "456.983.948-23"
 
 ## Contribuindo
