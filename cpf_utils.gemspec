@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = CpfUtils::VERSION
   spec.authors       = ["Jackson Pires"]
   spec.email         = ["jackson.pires@gmail.com"]
-  spec.description   = %q{Uma suite de funcionalidades para o CPF.}
+  spec.description   = %q{Uma suíte de funcionalidades para o CPF.}
   spec.summary       = %q{Gera CPF para testes no formado tradicional ou apenas
                           numérico, testa se determinado número de CPF
                           é válido, além muitas outras funcionalidades descritas
