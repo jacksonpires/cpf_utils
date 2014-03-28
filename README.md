@@ -83,6 +83,10 @@ Também é possível usar métodos em português:
     # Para gerar um número de CPF formatado a partir de um número candidato de 9 dígitos:
     "456983948".gerar_cpf_formatado => # "456.983.948-23"
 
+## Recomende
+
+Gostou dessa gem? Recomende-me no [Working With Rails](http://www.workingwithrails.com/people/148426)!
+
 ## Contribuindo
 
 1. Faça um Fork
