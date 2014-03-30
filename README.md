@@ -91,7 +91,7 @@ CpfUtils.cpf_valido?("472.380.519-23") => # true
 
 # Para gerar um número de CPF formatado a partir de um número candidato de 9 dígitos:
 "456983948".gerar_cpf_formatado => # "456.983.948-23"
-``
+```
 
 ## Recomende
 
