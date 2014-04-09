@@ -63,7 +63,7 @@ class String
   # A blacklist consiste em CPFs inválidos como '111.111.111-11' e seus
   # derivados
   #
-  # "11111111111".blacklisted_cpf? => # false
+  # "11111111111".blacklisted_cpf? => # true
   def blacklisted_cpf?
     wihout_mask = self.gsub(/\.?-?/,"",)
     first_number = wihout_mask[0]
