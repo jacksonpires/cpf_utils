@@ -56,7 +56,7 @@ CpfUtils.valid_cpf?("111.111.111-11") => # false
 # Para formatar um número válido de CPF:
 "45698394823".to_cpf_format => # "456.983.948-23"
 
-# Para gerar um número de CPF a partir de um número candidato  de 9 dígitos:
+# Para gerar um número de CPF a partir de um número candidato de 9 dígitos:
 "456983948".generate_cpf => # "45698394823"
 
 # Para gerar um número de CPF formatado a partir de um número candidato de 9 dígitos:
