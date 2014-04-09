@@ -13,7 +13,6 @@ O CpfUtils usa o Travis-CI para efetuar testes em diferentes versões do Ruby. A
 
 * MRI 1.9.2, 1.9.3, 2.0.0, 2.1.0
 * JRuby 1.9.x
-* Rubinius 2.2.1
 
 ## Instalação
 
