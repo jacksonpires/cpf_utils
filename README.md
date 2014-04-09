@@ -42,10 +42,12 @@ CpfUtils.cpf_formatted => # "456.983.948-23"
 CpfUtils.valid_cpf?("47238051923") => # true
 CpfUtils.valid_cpf?(47238051923) => # true
 CpfUtils.valid_cpf?("472.380.519-23") => # true
+CpfUtils.valid_cpf?("111.111.111-11") => # false
 
 # Outra forma de verificar se um CPF é válido:
 "45698394823".valid_cpf? => # true
 "456.983.948-23".valid_cpf? => # true
+"999.999.999-99".valid_cpf? => # false
 
 # Para verificar se uma máscara de CPF é válida:
 "456.983.948-23".valid_cpf_mask? => # true
@@ -74,10 +76,12 @@ CpfUtils.cpf_formatado => # "456.983.948-23"
 CpfUtils.cpf_valido?("47238051923") => # true
 CpfUtils.cpf_valido?(47238051923) => # true
 CpfUtils.cpf_valido?("472.380.519-23") => # true
+CpfUtils.cpf_valido?("111.111.111-11") => # false
 
 # Outra forma de verificar se um CPF é válido:
 "45698394823".cpf_valido? => # true
 "456.983.948-23".cpf_valido? => # true
+"999.999.999-99".cpf_valido? => # false
 
 # Para verificar se uma máscara de CPF é válida:
 "456.983.948-23".mascara_de_cpf_valida? => # true

@@ -22,7 +22,10 @@ class String
       tested_cpf << CpfUtils::Cpf.new(original_cpf[0..8]).first_digit.to_s
       tested_cpf << CpfUtils::Cpf.new(tested_cpf[0..9]).second_digit.to_s
 
-      tested_cpf == original_cpf ? true : false
+      valid_cpf = (tested_cpf == original_cpf) ? true : false
+      blacklisted_cpf = !self.blacklisted_cpf?
+
+      (valid_cpf == blacklisted_cpf) ? true : false
     end
   end
 
@@ -54,6 +57,17 @@ class String
   # "456983948".generate_cpf_formatted => # "456.983.948-23"
   def generate_cpf_formatted
     generate_cpf.to_cpf_format
+  end
+
+  # Verifica se o CPF é faz parte da blacklist
+  # A blacklist consiste em CPFs inválidos como '111.111.111-11' e seus
+  # derivados
+  #
+  # "11111111111".blacklisted_cpf? => # false
+  def blacklisted_cpf?
+    wihout_mask = self.gsub(/\.?-?/,"",)
+    first_number = wihout_mask[0]
+    wihout_mask.count(first_number) == 11 ? true : false
   end
 
   # Apelido 'mascara_de_cpf_valida' para o método valid_cpf_mask

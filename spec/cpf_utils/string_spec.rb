@@ -1,6 +1,9 @@
 require "spec_helper"
 
 describe String do
+  let(:valid_cpf) { CpfUtils.cpf }
+  let(:invalid_cpf) { "11111111111" }
+
   it "#valid_cpf_mask?" do
     expect("123.456.789-12".valid_cpf_mask?).to be_true
     expect("12345678912".valid_cpf_mask?).to be_true
@@ -24,27 +27,26 @@ describe String do
   end
 
   it "#valid_cpf?" do
-    cpf = CpfUtils.cpf
-    expect(cpf.valid_cpf?).to be_true
+    expect(valid_cpf.valid_cpf?).to be_true
+  end
+
+  it "#valid_cpf? - false" do
+    expect(invalid_cpf.valid_cpf?).to be_false
   end
 
   it "#cpf_valido?" do
-    cpf = CpfUtils.cpf
-    expect(cpf.cpf_valido?).to be_true
+    expect(valid_cpf.cpf_valido?).to be_true
   end
 
   it "#to_cpf_format?" do
-    cpf = CpfUtils.cpf
-    expect(cpf.to_cpf_format).to match(/^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}+$/)
+    expect(valid_cpf.to_cpf_format).to match(/^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}+$/)
   end
 
   it "#para_formato_cpf?" do
-    cpf = CpfUtils.cpf
-    expect(cpf.para_formato_cpf).to match(/^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}+$/)
+    expect(valid_cpf.para_formato_cpf).to match(/^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}+$/)
   end
 
   it "#generate_cpf" do
-    valid_cpf = CpfUtils.cpf
     final_cpf = valid_cpf[0..8].generate_cpf
 
     expect(final_cpf).to be_a_kind_of(String)
@@ -52,7 +54,6 @@ describe String do
   end
 
   it "#gerar_cpf" do
-    valid_cpf = CpfUtils.cpf
     final_cpf = valid_cpf[0..8].gerar_cpf
 
     expect(final_cpf).to be_a_kind_of(String)
@@ -60,16 +61,22 @@ describe String do
   end
 
   it "#gerar_cpf_formatado" do
-    valid_cpf = CpfUtils.cpf
     final_cpf = valid_cpf[0..8].gerar_cpf_formatado
 
     expect(final_cpf).to match(/^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}+$/)
   end
 
   it "#generate_cpf_formatted" do
-    valid_cpf = CpfUtils.cpf
     final_cpf = valid_cpf[0..8].generate_cpf_formatted
 
     expect(final_cpf).to match(/^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}+$/)
+  end
+
+  it "#blacklisted_cpf? - true" do
+    expect(invalid_cpf.blacklisted_cpf?).to be_true
+  end
+
+  it "#blacklisted_cpf? - false" do
+    expect(valid_cpf.blacklisted_cpf?).to be_false
   end
 end
