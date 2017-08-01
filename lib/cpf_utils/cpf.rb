@@ -8,11 +8,21 @@ module CpfUtils
     def initialize(numbers)
       if numbers.is_a? String
         numbers = numbers.split('')
-      elsif numbers.is_a? Fixnum
-        numbers = numbers.to_s.split('')
+      elsif Ruby::Version < '2.4.0'
+        if numbers.is_a? Fixnum
+          numbers = split_number(numbers)
+        end
+      elsif Ruby::Version >= '2.4.0'
+        if numbers.is_a? Integer
+          numbers = split_number(numbers)
+        end
       end
 
       @numbers = numbers
+    end
+
+    def split_number (numbers)
+      numbers.to_s.split('')
     end
 
     # Gera o CPF propriamente dito

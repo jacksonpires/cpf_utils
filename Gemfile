@@ -10,5 +10,7 @@ gem 'simplecov', '~> 0.7.1', group: :test, require: nil
 # A Ruby implementation of the Coveralls API.
 gem 'coveralls', require: false
 
+gem 'ruby-version', '~> 0.4.3'
+
 # Specify your gem's dependencies in cpf_utils.gemspec
 gemspec
