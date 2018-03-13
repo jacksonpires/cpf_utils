@@ -8,7 +8,7 @@ describe CpfUtils do
       expect(cpf.numbers.size).to eql(9)
     end
 
-    it "#initialize - Fixnum" do
+    it "#initialize - Integer" do
       cpf = CpfUtils::Cpf.new(123456789)
       expect(cpf.numbers).to be_a_kind_of(Array)
       expect(cpf.numbers.size).to eql(9)
