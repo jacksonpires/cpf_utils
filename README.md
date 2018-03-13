@@ -11,7 +11,7 @@ O CpfUtils é capaz de gerar CPF para testes no formado tradicional ou apenas nu
 
 O CpfUtils usa o Travis-CI para efetuar testes em diferentes versões do Ruby. As versões testadas e aprovadas, por enquanto, são:
 
-* MRI 1.9.2, 1.9.3, 2.0.0, 2.1.0
+* MRI 1.9.2, 1.9.3, 2.0.0, 2.1.0, 2.2.0, 2.3.0, 2.4.0, 2.5.0
 * JRuby 1.9.x
 
 ## Instalação

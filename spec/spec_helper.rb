@@ -1,13 +1,7 @@
-# Require Code Climate Test Reporter
-require "codeclimate-test-reporter"
+require 'simplecov'
+SimpleCov.start
 
-# Starts Code Climate Test Reporter
-CodeClimate::TestReporter.start
-
-# Require Coveralls for Test cover
 require 'coveralls'
-
-# Starts Coderalls
 Coveralls.wear!
 
 # Require other files of project
