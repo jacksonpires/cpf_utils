@@ -8,7 +8,7 @@ module CpfUtils
     def initialize(numbers)
       if numbers.is_a? String
         numbers = numbers.split('')
-      elsif numbers.is_a? Fixnum
+      elsif numbers.is_a? Integer
         numbers = numbers.to_s.split('')
       end
 
