@@ -33,8 +33,10 @@ class String
   #
   # "45698394823".to_cpf_format => # "456.983.948-23"
   def to_cpf_format
-    if self.valid_cpf?
-      "#{self[0..2]}.#{self[3..5]}.#{self[6..8]}-#{self[9..11]}"
+     cleaned_cpf = self.gsub(/\.?-?/,"",)
+    
+    if cleaned_cpf.valid_cpf?
+      "#{cleaned_cpf[0..2]}.#{cleaned_cpf[3..5]}.#{cleaned_cpf[6..8]}-#{cleaned_cpf[9..11]}"
     end
   end
 

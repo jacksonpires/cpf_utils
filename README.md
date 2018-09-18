@@ -115,3 +115,7 @@ Gostou dessa gem? Recomende-me no [Linkedin](https://www.linkedin.com/in/jackson
 3. Faça o commit de suas alterações  (`git commit -am 'Adicionada nova funcionalidade'`)
 4. Faça um push da sua nova funconalidade (`git push origin minha-nova-funcionalidade`)
 5. Submeta uma nova Pull Request
+
+## Dica
+
+Use ```rake console``` para iniciar uma sessão com o CpfUtils carreado. 

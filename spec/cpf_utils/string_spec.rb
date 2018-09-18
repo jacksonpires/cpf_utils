@@ -2,16 +2,17 @@ require "spec_helper"
 
 describe String do
   let(:valid_cpf) { CpfUtils.cpf }
+  let(:valid_formatted_cpf) { CpfUtils.cpf_formatted }
   let(:invalid_cpf) { "11111111111" }
 
   it "#valid_cpf_mask?" do
-    expect("123.456.789-12".valid_cpf_mask?).to be_true
-    expect("12345678912".valid_cpf_mask?).to be_true
+    expect(valid_formatted_cpf.valid_cpf_mask?).to be_true
+    expect(valid_cpf.valid_cpf_mask?).to be_true
   end
 
   it "#mascara_de_cpf_valida?" do
-    expect("123.456.789-12".mascara_de_cpf_valida?).to be_true
-    expect("12345678912".mascara_de_cpf_valida?).to be_true
+    expect(valid_formatted_cpf.mascara_de_cpf_valida?).to be_true
+    expect(valid_cpf.mascara_de_cpf_valida?).to be_true
   end
 
   it "#valid_cpf_mask? - be false" do
@@ -38,14 +39,16 @@ describe String do
     expect(valid_cpf.cpf_valido?).to be_true
   end
 
-  it "#to_cpf_format?" do
+  it "#to_cpf_format? - with unformatted cpf" do
     expect(valid_cpf.to_cpf_format).to match(/^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}+$/)
+    expect(valid_formatted_cpf.to_cpf_format).to match(/^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}+$/)
   end
 
   it "#para_formato_cpf?" do
     expect(valid_cpf.para_formato_cpf).to match(/^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}+$/)
+    expect(valid_formatted_cpf.para_formato_cpf).to match(/^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}+$/)
   end
-
+  
   it "#generate_cpf" do
     final_cpf = valid_cpf[0..8].generate_cpf
 
