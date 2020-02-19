@@ -118,4 +118,4 @@ Gostou dessa gem? Recomende-me no [Linkedin](https://www.linkedin.com/in/jackson
 
 ## Dica
 
-Use ```rake console``` para iniciar uma sessão com o CpfUtils carreado. 
+Use ```rake console``` para iniciar uma sessão com o CpfUtils carregado. 
